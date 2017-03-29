@@ -3,16 +3,13 @@
 <head>
     <title></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css">
-    <style type="text/css">
-        body {
-            padding:40px;
-        }
-    </style>
 </head>
 
 <body>
     <div id="root" class="container">
-        <modal v-if="showModal" @close="showModal = false"></modal>
+        <modal v-if="showModal" @close="showModal = false">
+            <p>We insert any text here.</p>
+        </modal>
 
         <button @click='showModal = true'>Show Modal</button>
     </div>
