@@ -33,7 +33,7 @@ Vue.component('tabs',{
 
 Vue.component('tab',{
     template:`
-        <div>
+        <div v-show="isActive">
             <slot></slot>
         </div>
     `,
