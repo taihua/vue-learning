@@ -39,13 +39,24 @@ Vue.component('tab',{
     `,
     props:{
         name: {require:true},
-        selected: {default: false}
+        selected: {
+            default:false
+        }
     },
     data() {
         return {isActive: false};
     },
     mounted() {
-        this.isActive = this.selected;
+        let hash_tag = location.href.split('#').pop();
+        //return this.name.toLowerCase().replace(/ /g, '-') === hash_tag;
+        if (hash_tag)
+        {
+            this.isActive = this.name.toLowerCase().replace(/ /g, '-') === hash_tag;
+        }
+        else
+        {
+            this.isActive = this.selected;
+        }
     },
     computed: {
         href() {
